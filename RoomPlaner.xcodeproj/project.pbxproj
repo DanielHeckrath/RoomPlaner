@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		655620E518EDCB1A00479B20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E418EDCB1A00479B20 /* Foundation.framework */; };
+		655620E718EDCB1A00479B20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E618EDCB1A00479B20 /* CoreGraphics.framework */; };
+		655620E918EDCB1A00479B20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E818EDCB1A00479B20 /* UIKit.framework */; };
+		655620EF18EDCB1A00479B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 655620ED18EDCB1A00479B20 /* InfoPlist.strings */; };
+		655620F118EDCB1A00479B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 655620F018EDCB1A00479B20 /* main.m */; };
+		655620F518EDCB1A00479B20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655620F418EDCB1A00479B20 /* AppDelegate.m */; };
+		655620F718EDCB1A00479B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655620F618EDCB1A00479B20 /* Images.xcassets */; };
+		655620FE18EDCB1A00479B20 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620FD18EDCB1A00479B20 /* XCTest.framework */; };
+		655620FF18EDCB1A00479B20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E418EDCB1A00479B20 /* Foundation.framework */; };
+		6556210018EDCB1A00479B20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E818EDCB1A00479B20 /* UIKit.framework */; };
+		6556210818EDCB1A00479B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6556210618EDCB1A00479B20 /* InfoPlist.strings */; };
+		6556210A18EDCB1A00479B20 /* RoomPlanerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556210918EDCB1A00479B20 /* RoomPlanerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6556210118EDCB1A00479B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655620D918EDCB1A00479B20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 655620E018EDCB1A00479B20;
+			remoteInfo = RoomPlaner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		655620E118EDCB1A00479B20 /* RoomPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		655620E418EDCB1A00479B20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		655620E618EDCB1A00479B20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		655620E818EDCB1A00479B20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		655620EC18EDCB1A00479B20 /* RoomPlaner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoomPlaner-Info.plist"; sourceTree = "<group>"; };
+		655620EE18EDCB1A00479B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		655620F018EDCB1A00479B20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		655620F218EDCB1A00479B20 /* RoomPlaner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RoomPlaner-Prefix.pch"; sourceTree = "<group>"; };
+		655620F318EDCB1A00479B20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		655620F418EDCB1A00479B20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		655620F618EDCB1A00479B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		655620FC18EDCB1A00479B20 /* RoomPlanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoomPlanerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		655620FD18EDCB1A00479B20 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6556210518EDCB1A00479B20 /* RoomPlanerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoomPlanerTests-Info.plist"; sourceTree = "<group>"; };
+		6556210718EDCB1A00479B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6556210918EDCB1A00479B20 /* RoomPlanerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomPlanerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		655620DE18EDCB1A00479B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655620E718EDCB1A00479B20 /* CoreGraphics.framework in Frameworks */,
+				655620E918EDCB1A00479B20 /* UIKit.framework in Frameworks */,
+				655620E518EDCB1A00479B20 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		655620F918EDCB1A00479B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655620FE18EDCB1A00479B20 /* XCTest.framework in Frameworks */,
+				6556210018EDCB1A00479B20 /* UIKit.framework in Frameworks */,
+				655620FF18EDCB1A00479B20 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		655620D818EDCB1A00479B20 = {
+			isa = PBXGroup;
+			children = (
+				655620EA18EDCB1A00479B20 /* RoomPlaner */,
+				6556210318EDCB1A00479B20 /* RoomPlanerTests */,
+				655620E318EDCB1A00479B20 /* Frameworks */,
+				655620E218EDCB1A00479B20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		655620E218EDCB1A00479B20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655620E118EDCB1A00479B20 /* RoomPlaner.app */,
+				655620FC18EDCB1A00479B20 /* RoomPlanerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655620E318EDCB1A00479B20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				655620E418EDCB1A00479B20 /* Foundation.framework */,
+				655620E618EDCB1A00479B20 /* CoreGraphics.framework */,
+				655620E818EDCB1A00479B20 /* UIKit.framework */,
+				655620FD18EDCB1A00479B20 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		655620EA18EDCB1A00479B20 /* RoomPlaner */ = {
+			isa = PBXGroup;
+			children = (
+				655620F318EDCB1A00479B20 /* AppDelegate.h */,
+				655620F418EDCB1A00479B20 /* AppDelegate.m */,
+				655620F618EDCB1A00479B20 /* Images.xcassets */,
+				655620EB18EDCB1A00479B20 /* Supporting Files */,
+			);
+			path = RoomPlaner;
+			sourceTree = "<group>";
+		};
+		655620EB18EDCB1A00479B20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				655620EC18EDCB1A00479B20 /* RoomPlaner-Info.plist */,
+				655620ED18EDCB1A00479B20 /* InfoPlist.strings */,
+				655620F018EDCB1A00479B20 /* main.m */,
+				655620F218EDCB1A00479B20 /* RoomPlaner-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6556210318EDCB1A00479B20 /* RoomPlanerTests */ = {
+			isa = PBXGroup;
+			children = (
+				6556210918EDCB1A00479B20 /* RoomPlanerTests.m */,
+				6556210418EDCB1A00479B20 /* Supporting Files */,
+			);
+			path = RoomPlanerTests;
+			sourceTree = "<group>";
+		};
+		6556210418EDCB1A00479B20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6556210518EDCB1A00479B20 /* RoomPlanerTests-Info.plist */,
+				6556210618EDCB1A00479B20 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		655620E018EDCB1A00479B20 /* RoomPlaner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6556210D18EDCB1A00479B20 /* Build configuration list for PBXNativeTarget "RoomPlaner" */;
+			buildPhases = (
+				655620DD18EDCB1A00479B20 /* Sources */,
+				655620DE18EDCB1A00479B20 /* Frameworks */,
+				655620DF18EDCB1A00479B20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoomPlaner;
+			productName = RoomPlaner;
+			productReference = 655620E118EDCB1A00479B20 /* RoomPlaner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		655620FB18EDCB1A00479B20 /* RoomPlanerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6556211018EDCB1A00479B20 /* Build configuration list for PBXNativeTarget "RoomPlanerTests" */;
+			buildPhases = (
+				655620F818EDCB1A00479B20 /* Sources */,
+				655620F918EDCB1A00479B20 /* Frameworks */,
+				655620FA18EDCB1A00479B20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6556210218EDCB1A00479B20 /* PBXTargetDependency */,
+			);
+			name = RoomPlanerTests;
+			productName = RoomPlanerTests;
+			productReference = 655620FC18EDCB1A00479B20 /* RoomPlanerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		655620D918EDCB1A00479B20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Hackathon;
+				TargetAttributes = {
+					655620FB18EDCB1A00479B20 = {
+						TestTargetID = 655620E018EDCB1A00479B20;
+					};
+				};
+			};
+			buildConfigurationList = 655620DC18EDCB1A00479B20 /* Build configuration list for PBXProject "RoomPlaner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 655620D818EDCB1A00479B20;
+			productRefGroup = 655620E218EDCB1A00479B20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				655620E018EDCB1A00479B20 /* RoomPlaner */,
+				655620FB18EDCB1A00479B20 /* RoomPlanerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		655620DF18EDCB1A00479B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655620EF18EDCB1A00479B20 /* InfoPlist.strings in Resources */,
+				655620F718EDCB1A00479B20 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		655620FA18EDCB1A00479B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6556210818EDCB1A00479B20 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		655620DD18EDCB1A00479B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655620F518EDCB1A00479B20 /* AppDelegate.m in Sources */,
+				655620F118EDCB1A00479B20 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		655620F818EDCB1A00479B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6556210A18EDCB1A00479B20 /* RoomPlanerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6556210218EDCB1A00479B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 655620E018EDCB1A00479B20 /* RoomPlaner */;
+			targetProxy = 6556210118EDCB1A00479B20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		655620ED18EDCB1A00479B20 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				655620EE18EDCB1A00479B20 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6556210618EDCB1A00479B20 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6556210718EDCB1A00479B20 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6556210B18EDCB1A00479B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6556210C18EDCB1A00479B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6556210E18EDCB1A00479B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoomPlaner/RoomPlaner-Prefix.pch";
+				INFOPLIST_FILE = "RoomPlaner/RoomPlaner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6556210F18EDCB1A00479B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoomPlaner/RoomPlaner-Prefix.pch";
+				INFOPLIST_FILE = "RoomPlaner/RoomPlaner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6556211118EDCB1A00479B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RoomPlaner.app/RoomPlaner";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoomPlaner/RoomPlaner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RoomPlanerTests/RoomPlanerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6556211218EDCB1A00479B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RoomPlaner.app/RoomPlaner";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoomPlaner/RoomPlaner-Prefix.pch";
+				INFOPLIST_FILE = "RoomPlanerTests/RoomPlanerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		655620DC18EDCB1A00479B20 /* Build configuration list for PBXProject "RoomPlaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6556210B18EDCB1A00479B20 /* Debug */,
+				6556210C18EDCB1A00479B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6556210D18EDCB1A00479B20 /* Build configuration list for PBXNativeTarget "RoomPlaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6556210E18EDCB1A00479B20 /* Debug */,
+				6556210F18EDCB1A00479B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6556211018EDCB1A00479B20 /* Build configuration list for PBXNativeTarget "RoomPlanerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6556211118EDCB1A00479B20 /* Debug */,
+				6556211218EDCB1A00479B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 655620D918EDCB1A00479B20 /* Project object */;
+}
