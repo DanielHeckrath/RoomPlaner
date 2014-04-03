@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface BeaconManager : NSObject
+@interface BeaconManager : NSObject <CLLocationManagerDelegate>
+
+@property (nonatomic,strong) NSArray *rooms;
+
++ (instancetype)sharedInstance;
+
+- (void)loadRooms;
 
 @end
