@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F7D94B918EDCE7100EB850E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D94B818EDCE7100EB850E /* MainStoryboard.storyboard */; };
 		655620E518EDCB1A00479B20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E418EDCB1A00479B20 /* Foundation.framework */; };
 		655620E718EDCB1A00479B20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E618EDCB1A00479B20 /* CoreGraphics.framework */; };
 		655620E918EDCB1A00479B20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E818EDCB1A00479B20 /* UIKit.framework */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F7D94B818EDCE7100EB850E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		655620E118EDCB1A00479B20 /* RoomPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655620E418EDCB1A00479B20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		655620E618EDCB1A00479B20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +117,7 @@
 				655620F418EDCB1A00479B20 /* AppDelegate.m */,
 				655620F618EDCB1A00479B20 /* Images.xcassets */,
 				655620EB18EDCB1A00479B20 /* Supporting Files */,
+				4F7D94B818EDCE7100EB850E /* MainStoryboard.storyboard */,
 			);
 			path = RoomPlaner;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7D94B918EDCE7100EB850E /* MainStoryboard.storyboard in Resources */,
 				655620EF18EDCB1A00479B20 /* InfoPlist.strings in Resources */,
 				655620F718EDCB1A00479B20 /* Images.xcassets in Resources */,
 			);
