@@ -8,17 +8,20 @@
 
 #import "RPRoomListTableViewController.h"
 #import "BeaconManager.h"
+#import "RPRoomAvailabilityTableViewCell.h"
+#import "Room.h"
+
+static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 
 @interface RPRoomListTableViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 @property (strong, nonatomic) BeaconManager *sharedBeaconManager;
-@property (strong, nonatomic) NSArray *roomData;
+@property (nonatomic, strong) NSArray *rooms;
 @end
 
 @implementation RPRoomListTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         self.sharedBeaconManager = [BeaconManager sharedInstance];
@@ -26,49 +29,54 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // load rooms
-    [self loadRoomData];
+
+    self.tableView.allowsSelection = NO;
+    [self.tableView registerClass:[RPRoomAvailabilityTableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
+
+    self.rooms = [self mockedRooms];
 }
 
+- (NSArray *)mockedRooms {
+    Room *firstRoom = [[Room alloc] init];
+    firstRoom.name = @"Startplatz 01";
+    firstRoom.occupied = YES;
+    Room *secondRoom = [[Room alloc] init];
+    secondRoom.name = @"Startplatz 02";
+    secondRoom.occupied = YES;
+    Room *thirdRoom = [[Room alloc] init];
+    thirdRoom.name = @"Startplatz 03";
+    thirdRoom.occupied = YES;
+    return @[firstRoom, secondRoom, thirdRoom];
+}
 
 #pragma mark -
 #pragma mark - Data loading
 
-- (void)loadRoomData
-{
+- (void)loadRoomData {
     // load...
-    self.roomData = [self.sharedBeaconManager rooms];
+    self.rooms = [self.sharedBeaconManager rooms];
 }
 
+#pragma mark -
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
 
 #pragma mark -
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.rooms count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.roomData count];
-}
-
-
-#pragma mark -
-#pragma mark - Table view data source
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ROOM_CELL" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RPRoomAvailabilityTableViewCell *roomTableViewCell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
+    roomTableViewCell.room = self.rooms[(NSUInteger) indexPath.row];
+    return roomTableViewCell;
 }
 
 @end
