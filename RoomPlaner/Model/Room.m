@@ -17,4 +17,8 @@
     return @"Room";
 }
 
+- (NSString *)key {
+    return [NSString stringWithFormat:@"%@-%d-%d", self.name, self.major.intValue, self.minor.intValue];
+}
+
 @end

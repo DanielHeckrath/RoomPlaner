@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+UIKIT_EXTERN NSString *const kRPDidUpdateRoomNotification;
+
 @interface BeaconManager : NSObject <CLLocationManagerDelegate>
 
 @property (nonatomic,strong) NSArray *rooms;

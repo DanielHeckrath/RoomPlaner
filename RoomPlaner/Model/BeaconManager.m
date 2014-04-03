@@ -10,12 +10,17 @@
 
 #import "BeaconManager.h"
 #import "Room.h"
+#import "NSObject+Blocks.h"
+
+NSString * const kRPDidUpdateRoomNotification = @"RoomPlaner:DidUpdateRooms";
 
 @interface BeaconManager ()
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) CLBeaconRegion *beaconRegion;
 @property (nonatomic,strong) NSMutableArray *beaconsInRange;
+
+@property (nonatomic, strong) NSMutableDictionary *roomBlocks;
 
 @end
 
@@ -38,16 +43,17 @@
     if(self = [super init]) {
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
+        
+        NSUUID *uuid = [[NSUUID alloc]initWithUUIDString:@"f7826da6-4fa2-4e98-8024-bc5b71e0893e"];
+        _beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:kRegionIdentifier];
+        [_locationManager startMonitoringForRegion:_beaconRegion];
+        
+        [self loadRooms:nil];
+        
+        // init array
+        _beaconsInRange = [NSMutableArray new];
+        _roomBlocks = [NSMutableDictionary new];
     }
-    
-    NSUUID *uuid = [[NSUUID alloc]initWithUUIDString:@"f7826da6-4fa2-4e98-8024-bc5b71e0893e"];
-    _beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:kRegionIdentifier];
-    [_locationManager startMonitoringForRegion:_beaconRegion];
-    
-    [self loadRooms:nil];
-    
-    // init array
-    _beaconsInRange = [NSMutableArray new];
     return self;
 }
 
@@ -92,6 +98,13 @@
                         room.occupied = YES;
                         
                         [room saveInBackground];
+                        
+                        id block = self.roomBlocks[[room key]];
+                        if (block) {
+                            [NSObject cancelBlock:block];
+                        }
+                        
+                        [[NSNotificationCenter defaultCenter] postNotificationName:kRPDidUpdateRoomNotification object:nil userInfo:nil];
                     }
                 }
             }
@@ -105,9 +118,16 @@
                 for(Room *room in _rooms) {
                     if([room.major isEqual:beacon.major] && [room.minor isEqual:beacon.minor]) {
                         [_beaconsInRange removeObjectAtIndex:index];
-                        NSLog(@"set room: %@ to free",room.name);
-                        room.occupied = NO;
-                        [room saveInBackground];
+                        NSLog(@"dispatch - set room: %@ to free",room.name);
+                        id block = [room performBlock:^{
+                            NSLog(@"set room: %@ to free",room.name);
+                            room.occupied = NO;
+                            [room saveInBackground];
+                            [self.roomBlocks removeObjectForKey:[room key]];
+                            [[NSNotificationCenter defaultCenter] postNotificationName:kRPDidUpdateRoomNotification object:nil userInfo:nil];
+                        } afterDelay:10];
+                        
+                        self.roomBlocks[[room key]] = block;
                     }
                 }
             }
