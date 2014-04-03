@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F7D94B918EDCE7100EB850E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D94B818EDCE7100EB850E /* MainStoryboard.storyboard */; };
+		4F7D94BC18EDD09C00EB850E /* RPRoomListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D94BB18EDD09C00EB850E /* RPRoomListTableViewController.m */; };
 		655620E518EDCB1A00479B20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E418EDCB1A00479B20 /* Foundation.framework */; };
 		655620E718EDCB1A00479B20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E618EDCB1A00479B20 /* CoreGraphics.framework */; };
 		655620E918EDCB1A00479B20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E818EDCB1A00479B20 /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		4F7D94B818EDCE7100EB850E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4F7D94BA18EDD09C00EB850E /* RPRoomListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RPRoomListTableViewController.h; path = Controller/RPRoomListTableViewController.h; sourceTree = "<group>"; };
+		4F7D94BB18EDD09C00EB850E /* RPRoomListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPRoomListTableViewController.m; path = Controller/RPRoomListTableViewController.m; sourceTree = "<group>"; };
 		655620E118EDCB1A00479B20 /* RoomPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655620E418EDCB1A00479B20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		655620E618EDCB1A00479B20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F7D94BD18EDD0A100EB850E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F7D94BA18EDD09C00EB850E /* RPRoomListTableViewController.h */,
+				4F7D94BB18EDD09C00EB850E /* RPRoomListTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		655620D818EDCB1A00479B20 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 				655620F618EDCB1A00479B20 /* Images.xcassets */,
 				655620EB18EDCB1A00479B20 /* Supporting Files */,
 				4F7D94B818EDCE7100EB850E /* MainStoryboard.storyboard */,
+				4F7D94BD18EDD0A100EB850E /* Controller */,
 			);
 			path = RoomPlaner;
 			sourceTree = "<group>";
@@ -293,6 +306,7 @@
 			files = (
 				655620F518EDCB1A00479B20 /* AppDelegate.m in Sources */,
 				655620F118EDCB1A00479B20 /* main.m in Sources */,
+				4F7D94BC18EDD09C00EB850E /* RPRoomListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
