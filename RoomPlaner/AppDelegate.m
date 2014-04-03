@@ -7,16 +7,20 @@
 //
 
 #import "AppDelegate.h"
+#import "Room.h"
 #import <Parse/Parse.h>
 
 @implementation AppDelegate
+
+- (void)setupParse {
+    [Room registerSubclass];
+    [Parse setApplicationId:@"ZRvRNIW4icg03tjkgMXjeCO3TDq56ElvPYyjU90q" clientKey:@"fE4XHmqgwjuWIwXFwM83my9BYYNyJ1EivpOwAtKE"];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
-    [Parse setApplicationId:@"ZRvRNIW4icg03tjkgMXjeCO3TDq56ElvPYyjU90q" clientKey:@"fE4XHmqgwjuWIwXFwM83my9BYYNyJ1EivpOwAtKE"];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

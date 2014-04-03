@@ -29,6 +29,7 @@
 		6556212318EDCF3C00479B20 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212218EDCF3C00479B20 /* Security.framework */; };
 		6556212518EDCF4100479B20 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212418EDCF4100479B20 /* StoreKit.framework */; };
 		6556212718EDCF4900479B20 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212618EDCF4900479B20 /* SystemConfiguration.framework */; };
+		6556212A18EDD05100479B20 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556212918EDD05100479B20 /* Room.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		6556212218EDCF3C00479B20 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6556212418EDCF4100479B20 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6556212618EDCF4900479B20 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6556212818EDD05100479B20 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		6556212918EDD05100479B20 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,8 @@
 		6556211518EDCEA900479B20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6556212818EDD05100479B20 /* Room.h */,
+				6556212918EDD05100479B20 /* Room.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6556212A18EDD05100479B20 /* Room.m in Sources */,
 				655620F518EDCB1A00479B20 /* AppDelegate.m in Sources */,
 				655620F118EDCB1A00479B20 /* main.m in Sources */,
 			);
