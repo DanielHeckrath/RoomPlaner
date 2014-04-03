@@ -34,7 +34,7 @@
 		6556212A18EDD05100479B20 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556212918EDD05100479B20 /* Room.m */; };
 		65DC0FE818EDD4D2007A0972 /* RPAddRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC0FE718EDD4D2007A0972 /* RPAddRoomTableViewController.m */; };
 		7E57D2075481955F102F9B16 /* RPRoomAvailabilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E57DBB1568F3C9C0EB85D2B /* RPRoomAvailabilityTableViewCell.m */; };
-		FD3DDAEB18EDD101004447E9 /* BeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3DDAEA18EDD101004447E9 /* BeaconManager.m */; };
+		FDA90CA318EDDA060058821C /* BeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3DDAEA18EDD101004447E9 /* BeaconManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,13 +92,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6556211B18EDCF1D00479B20 /* CoreLocation.framework in Frameworks */,
 				6556212718EDCF4900479B20 /* SystemConfiguration.framework in Frameworks */,
 				6556212518EDCF4100479B20 /* StoreKit.framework in Frameworks */,
 				6556212318EDCF3C00479B20 /* Security.framework in Frameworks */,
 				6556212118EDCF3200479B20 /* QuartzCore.framework in Frameworks */,
 				6556211F18EDCF2C00479B20 /* MobileCoreServices.framework in Frameworks */,
 				6556211D18EDCF2400479B20 /* libz.dylib in Frameworks */,
-				6556211B18EDCF1D00479B20 /* CoreLocation.framework in Frameworks */,
 				655620E718EDCB1A00479B20 /* CoreGraphics.framework in Frameworks */,
 				6556211918EDCF0D00479B20 /* CFNetwork.framework in Frameworks */,
 				6556211718EDCEFD00479B20 /* AudioToolbox.framework in Frameworks */,
@@ -332,7 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD3DDAEB18EDD101004447E9 /* BeaconManager.m in Sources */,
+				FDA90CA318EDDA060058821C /* BeaconManager.m in Sources */,
 				6556212A18EDD05100479B20 /* Room.m in Sources */,
 				655620F518EDCB1A00479B20 /* AppDelegate.m in Sources */,
 				655620F118EDCB1A00479B20 /* main.m in Sources */,
@@ -462,6 +462,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoomPlaner/RoomPlaner-Prefix.pch";
 				INFOPLIST_FILE = "RoomPlaner/RoomPlaner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -479,6 +480,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoomPlaner/RoomPlaner-Prefix.pch";
 				INFOPLIST_FILE = "RoomPlaner/RoomPlaner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

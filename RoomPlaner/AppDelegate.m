@@ -21,6 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setupParse];
+    
+    // test beaconmanager
+    BeaconManager *beaconManager = [BeaconManager sharedInstance];
+    
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
