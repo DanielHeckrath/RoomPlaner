@@ -17,6 +17,6 @@ UIKIT_EXTERN NSString *const kRPDidUpdateRoomNotification;
 
 + (instancetype)sharedInstance;
 
-- (void)loadRooms:(void(^)(BOOL finished))completion;
+- (void)loadRooms:(void (^)(BOOL finished))completion;
 
 @end

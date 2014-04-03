@@ -9,6 +9,7 @@
 #import "RPRoomListTableViewController.h"
 #import "BeaconManager.h"
 #import "RPRoomAvailabilityTableViewCell.h"
+#import "RPRoomDetailViewController.h"
 #import "Room.h"
 
 static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
@@ -32,9 +33,12 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"Room Overview";
+    
     self.sharedBeaconManager = [BeaconManager sharedInstance];
     
-    self.tableView.allowsSelection = NO;
+    self.tableView.allowsSelection = YES;
     [self.tableView registerClass:[RPRoomAvailabilityTableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
 
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -49,6 +53,8 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     [self loadRoomData];
 }
 
+/*
+// debug:
 - (NSArray *)mockedRooms {
     Room *firstRoom = [[Room alloc] init];
     firstRoom.name = @"Startplatz 01";
@@ -61,6 +67,7 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     thirdRoom.occupied = YES;
     return @[firstRoom, secondRoom, thirdRoom];
 }
+*/
 
 #pragma mark -
 #pragma mark - Data loading
@@ -98,9 +105,18 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     return roomTableViewCell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"RPRoomDetailViewControllerSegue" sender:self];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"RPRoomDetailViewControllerSegue"]) {
+        RPRoomDetailViewController *controller = (RPRoomDetailViewController *)segue.destinationViewController;
+        controller.room = self.rooms[[self.tableView indexPathForSelectedRow].row];
+    }
+}
 @end

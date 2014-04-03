@@ -60,7 +60,7 @@ NSString * const kRPDidUpdateRoomNotification = @"RoomPlaner:DidUpdateRooms";
 #pragma mark -
 #pragma mark - Backend
 
-- (void)loadRooms:(void (^)(BOOL))completion {
+- (void)loadRooms:(void (^)(BOOL finished))completion {
     PFQuery *query = [Room query];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         _rooms = objects;
