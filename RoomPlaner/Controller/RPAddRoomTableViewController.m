@@ -86,6 +86,9 @@
                     [self.navigationController popViewControllerAnimated:YES];
                 }
             }];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler" message:@"Es existiert bereits ein Raum mit dieser Major/Minor Number Kombination." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
         }
     }];
     
