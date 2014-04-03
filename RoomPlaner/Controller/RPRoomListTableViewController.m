@@ -64,12 +64,17 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 #pragma mark -
 #pragma mark - Data loading
 
-- (void)loadRoomData {  
-    //self.rooms = [self.sharedBeaconManager rooms];
-    self.rooms = [self mockedRooms];
-    
-    [self.refreshControl endRefreshing];
-    [self.tableView reloadData];
+- (void)loadRoomData {
+    __weak typeof(self) weakSelf = self;
+    [self.sharedBeaconManager loadRooms:^(BOOL finished) {
+        [weakSelf.refreshControl endRefreshing];
+        if (finished) {
+            weakSelf.rooms = [self.sharedBeaconManager rooms];
+            [weakSelf.tableView reloadData];
+        } else {
+            NSLog(@"ERROR loading room data!");
+        }
+    }];
 }
 
 #pragma mark -
