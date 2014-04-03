@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSNumber *minor;
 @property (nonatomic, assign) BOOL occupied;
 
+- (NSString *)key;
+
 @end
