@@ -9,11 +9,13 @@
 #define kRegionIdentifier   @"f7826da6-4fa2-4e98-8024-bc5b71e0893e"
 
 #import "BeaconManager.h"
+#import "Room.h"
 
 @interface BeaconManager ()
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) CLBeaconRegion *beaconRegion;
+@property (nonatomic,strong) NSMutableArray *beaconsInRange;
 
 @end
 
@@ -48,8 +50,15 @@
 #pragma mark -
 #pragma mark - Backend
 
-- (void)loadRooms {
-    
+- (void)loadRooms:(void (^)(BOOL))completion {
+    PFQuery *query = [Room query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        _rooms = objects;
+        
+        if(completion) {
+            completion(YES);
+        }
+    }];
 }
 
 #pragma mark -
@@ -65,7 +74,25 @@
 
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    
+    for(CLBeacon *beacon in beacons) {
+        if(beacon.proximity == CLProximityNear) {
+            if([_beaconsInRange indexOfObject:beacon] != NSNotFound) {
+                // check if beacon is for our rooms
+                for(Room *room in _rooms) {
+                    if(room.major == beacon.major && room.minor == beacon.minor) {
+                        // good beacon for us
+                        [_beaconsInRange addObject:beacon];
+                    }
+                }
+            }
+        } else {
+            // check if we
+            if([_beaconsInRange indexOfObject:beacon] != NSNotFound) {
+                // exit
+                [_beaconsInRange removeObject:beacon];
+            }
+        }
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error {
