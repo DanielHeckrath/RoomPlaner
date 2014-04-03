@@ -79,7 +79,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     for(CLBeacon *beacon in beacons) {
-        if(beacon.proximity == CLProximityNear) {
+        if(beacon.proximity == CLProximityNear || beacon.proximity == CLProximityImmediate) {
             if([_beaconsInRange indexOfObjectPassingTest:^BOOL(CLBeacon *obj, NSUInteger idx, BOOL *stop) {
                 return ([obj.minor isEqual:beacon.minor] && [obj.major isEqual:beacon.major]);
             }] == NSNotFound) {
@@ -97,13 +97,14 @@
             }
         } else {
             // check if becon is important for us
-            if([_beaconsInRange indexOfObjectPassingTest:^BOOL(CLBeacon *obj, NSUInteger idx, BOOL *stop) {
+            NSUInteger index = [_beaconsInRange indexOfObjectPassingTest:^BOOL(CLBeacon *obj, NSUInteger idx, BOOL *stop) {
                 return ([obj.minor isEqual:beacon.minor] && [obj.major isEqual:beacon.major]);
-            }] != NSNotFound) {
+            }];
+            if(index != NSNotFound) {
                 // set room to "free"
                 for(Room *room in _rooms) {
                     if([room.major isEqual:beacon.major] && [room.minor isEqual:beacon.minor]) {
-                        [_beaconsInRange removeObject:beacon];
+                        [_beaconsInRange removeObjectAtIndex:index];
                         NSLog(@"set room: %@ to free",room.name);
                         room.occupied = NO;
                         [room saveInBackground];
