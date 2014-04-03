@@ -19,6 +19,7 @@
 		6556210018EDCB1A00479B20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655620E818EDCB1A00479B20 /* UIKit.framework */; };
 		6556210818EDCB1A00479B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6556210618EDCB1A00479B20 /* InfoPlist.strings */; };
 		6556210A18EDCB1A00479B20 /* RoomPlanerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556210918EDCB1A00479B20 /* RoomPlanerTests.m */; };
+		6556211418EDCCA400479B20 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556211318EDCCA400479B20 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		6556210518EDCB1A00479B20 /* RoomPlanerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoomPlanerTests-Info.plist"; sourceTree = "<group>"; };
 		6556210718EDCB1A00479B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6556210918EDCB1A00479B20 /* RoomPlanerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomPlanerTests.m; sourceTree = "<group>"; };
+		6556211318EDCCA400479B20 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			files = (
 				655620E718EDCB1A00479B20 /* CoreGraphics.framework in Frameworks */,
 				655620E918EDCB1A00479B20 /* UIKit.framework in Frameworks */,
+				6556211418EDCCA400479B20 /* Parse.framework in Frameworks */,
 				655620E518EDCB1A00479B20 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +99,7 @@
 		655620E318EDCB1A00479B20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6556211318EDCCA400479B20 /* Parse.framework */,
 				655620E418EDCB1A00479B20 /* Foundation.framework */,
 				655620E618EDCB1A00479B20 /* CoreGraphics.framework */,
 				655620E818EDCB1A00479B20 /* UIKit.framework */,
@@ -357,6 +361,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoomPlaner/RoomPlaner-Prefix.pch";
 				INFOPLIST_FILE = "RoomPlaner/RoomPlaner-Info.plist";
@@ -370,6 +378,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoomPlaner/RoomPlaner-Prefix.pch";
 				INFOPLIST_FILE = "RoomPlaner/RoomPlaner-Info.plist";
@@ -437,6 +449,7 @@
 				6556210F18EDCB1A00479B20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6556211018EDCB1A00479B20 /* Build configuration list for PBXNativeTarget "RoomPlanerTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +458,7 @@
 				6556211218EDCB1A00479B20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
