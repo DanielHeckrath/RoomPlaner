@@ -30,7 +30,6 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="7yh-Zq-fjf">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="XSE-rN-Ckj">
                             <connections>
-                                <action selector="addAction:" destination="8Xv-XZ-Sks" id="Ndh-DM-DWu"/>
                                 <segue destination="SxU-9Z-ZMC" kind="push" id="yc7-JS-ROR"/>
                             </connections>
                         </barButtonItem>

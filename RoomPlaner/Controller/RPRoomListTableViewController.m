@@ -34,19 +34,14 @@
     [self loadRoomData];
 }
 
+
+#pragma mark -
+#pragma mark - Data loading
+
 - (void)loadRoomData
 {
     // load...
     self.roomData = [self.sharedBeaconManager rooms];
-}
-
-
-#pragma mark -
-#pragma mark - Actions
-
-- (IBAction)addAction:(UIBarButtonItem *)sender
-{
-    
 }
 
 
