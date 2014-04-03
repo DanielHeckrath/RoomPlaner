@@ -69,11 +69,11 @@
 #pragma mark - CLLocaionManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-    
+    NSLog(@"Did enter readion: %@", region);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    //NSLog(@"didExit ")
+    NSLog(@"Did exit readion: %@", region);
 }
 
 
