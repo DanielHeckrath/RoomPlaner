@@ -25,14 +25,15 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
-        self.sharedBeaconManager = [BeaconManager sharedInstance];
+        
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.sharedBeaconManager = [BeaconManager sharedInstance];
+    
     self.tableView.allowsSelection = NO;
     [self.tableView registerClass:[RPRoomAvailabilityTableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
 
