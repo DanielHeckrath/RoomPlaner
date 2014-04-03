@@ -9,11 +9,13 @@
 #define kRegionIdentifier   @"f7826da6-4fa2-4e98-8024-bc5b71e0893e"
 
 #import "BeaconManager.h"
+#import "Room.h"
 
 @interface BeaconManager ()
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) CLBeaconRegion *beaconRegion;
+@property (nonatomic,strong) NSMutableArray *beaconsInRange;
 
 @end
 
@@ -48,8 +50,15 @@
 #pragma mark -
 #pragma mark - Backend
 
-- (void)loadRooms {
-    
+- (void)loadRooms:(void (^)(BOOL))completion {
+    PFQuery *query = [Room query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        _rooms = objects;
+        
+        if(completion) {
+            completion(YES);
+        }
+    }];
 }
 
 #pragma mark -
@@ -65,7 +74,37 @@
 
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    
+    for(CLBeacon *beacon in beacons) {
+        if(beacon.proximity == CLProximityNear) {
+            if([_beaconsInRange indexOfObject:beacon] != NSNotFound) {
+                // check if beacon is for our rooms
+                for(Room *room in _rooms) {
+                    if(room.major == beacon.major && room.minor == beacon.minor) {
+                        // good beacon for us
+                        [_beaconsInRange addObject:beacon];
+                        NSLog(@"set room: %@ to occupied",room.name);
+                        room.occupied = YES;
+                        
+                        [room saveInBackground];
+                    }
+                }
+            }
+        } else {
+            // check if becon is important for us
+            if([_beaconsInRange indexOfObject:beacon] != NSNotFound) {
+                // remove beacon
+                [_beaconsInRange removeObject:beacon];
+                // set room to "free"
+                for(Room *room in _rooms) {
+                    if(room.minor == beacon.minor && room.major == beacon.major) {
+                        NSLog(@"set room: %@ to free",room.name);
+                        room.occupied = NO;
+                        [room saveInBackground];
+                    }
+                }
+            }
+        }
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error {
