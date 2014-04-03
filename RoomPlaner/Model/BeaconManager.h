@@ -10,10 +10,4 @@
 
 @interface BeaconManager : NSObject
 
-// return shared instance of beaconmanager
-+ (instancetype)sharedInstance;
-
-// list of rooms
-@property (nonatomic,strong) NSArray *rooms;
-
 @end
