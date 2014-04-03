@@ -15,6 +15,6 @@
 
 + (instancetype)sharedInstance;
 
-- (void)loadRooms;
+- (void)loadRooms:(void(^)(BOOL finished))completion;
 
 @end
