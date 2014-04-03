@@ -44,6 +44,10 @@
     _beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:kRegionIdentifier];
     [_locationManager startMonitoringForRegion:_beaconRegion];
     
+    [self loadRooms:nil];
+    
+    // init array
+    _beaconsInRange = [NSMutableArray new];
     return self;
 }
 
@@ -54,7 +58,7 @@
     PFQuery *query = [Room query];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         _rooms = objects;
-        
+        NSLog(@"did load rooms");
         if(completion) {
             completion(YES);
         }
@@ -69,17 +73,17 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    
+    //NSLog(@"didExit ")
 }
 
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     for(CLBeacon *beacon in beacons) {
         if(beacon.proximity == CLProximityNear) {
-            if([_beaconsInRange indexOfObject:beacon] != NSNotFound) {
+            if([_beaconsInRange indexOfObject:beacon] == NSNotFound) {
                 // check if beacon is for our rooms
                 for(Room *room in _rooms) {
-                    if(room.major == beacon.major && room.minor == beacon.minor) {
+                    if([room.major isEqual:beacon.major] && [room.minor isEqual:beacon.minor]) {
                         // good beacon for us
                         [_beaconsInRange addObject:beacon];
                         NSLog(@"set room: %@ to occupied",room.name);
@@ -92,11 +96,10 @@
         } else {
             // check if becon is important for us
             if([_beaconsInRange indexOfObject:beacon] != NSNotFound) {
-                // remove beacon
-                [_beaconsInRange removeObject:beacon];
                 // set room to "free"
                 for(Room *room in _rooms) {
-                    if(room.minor == beacon.minor && room.major == beacon.major) {
+                    if([room.major isEqual:beacon.major] && [room.minor isEqual:beacon.minor]) {
+                        [_beaconsInRange removeObject:beacon];
                         NSLog(@"set room: %@ to free",room.name);
                         room.occupied = NO;
                         [room saveInBackground];
