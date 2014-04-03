@@ -37,13 +37,20 @@
     }
     
     self.labelRoomName.text = self.room.name;
-    self.labelMajor.text = [NSString stringWithFormat:@"Major value: %@", [self.room.major stringValue]];
-    self.labelMinor.text = [NSString stringWithFormat:@"Minor value: %@", [self.room.minor stringValue]];
-    self.labelOccupation.text = [NSString stringWithFormat:@"Occupied: %@", self.room.occupied ?  @"YES" : @"NO"];
+    self.labelMajor.text = [NSString stringWithFormat:@"Major value:\t\t %@", [self.room.major stringValue]];
+    self.labelMinor.text = [NSString stringWithFormat:@"Minor value:\t\t %@", [self.room.minor stringValue]];
+    self.labelOccupation.text = [NSString stringWithFormat:@"Occupied:\t\t %@", self.room.occupied ?  @"YES" : @"NO"];
     
     self.occupationView.clipsToBounds = YES;
     self.occupationView.layer.cornerRadius = self.occupationView.frame.size.width / 2;
-    self.occupationView.backgroundColor = self.room.occupied ? [UIColor redColor] : [UIColor greenColor];
+    
+    UIColor *color;
+    if (self.room.occupied) {
+        color = UIColorFromHex(0xe74c3c); // red
+    } else {
+        color = UIColorFromHex(0x2ecc71); // green
+    }
+    self.occupationView.backgroundColor = color;
 }
 
 @end

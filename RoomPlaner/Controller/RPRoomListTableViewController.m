@@ -19,6 +19,7 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 @property (strong, nonatomic) BeaconManager *sharedBeaconManager;
 @property (nonatomic, strong) NSArray *rooms;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, assign) NSInteger selectionIndex;
 @end
 
 @implementation RPRoomListTableViewController
@@ -26,7 +27,7 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
-        
+        // nothing to do ...
     }
     return self;
 }
@@ -37,7 +38,7 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     self.title = @"Room Overview";
     
     self.sharedBeaconManager = [BeaconManager sharedInstance];
-    
+    self.selectionIndex = -1;
     self.tableView.allowsSelection = YES;
     [self.tableView registerClass:[RPRoomAvailabilityTableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
 
@@ -108,6 +109,7 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.selectionIndex = indexPath.row;
     [self performSegueWithIdentifier:@"RPRoomDetailViewControllerSegue" sender:self];
 }
 
@@ -116,7 +118,10 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 {
     if ([segue.identifier isEqualToString:@"RPRoomDetailViewControllerSegue"]) {
         RPRoomDetailViewController *controller = (RPRoomDetailViewController *)segue.destinationViewController;
-        controller.room = self.rooms[[self.tableView indexPathForSelectedRow].row];
+        if (self.selectionIndex != -1) {
+            controller.room = self.rooms[self.selectionIndex];
+        }
+        self.selectionIndex = -1;
     }
 }
 @end
