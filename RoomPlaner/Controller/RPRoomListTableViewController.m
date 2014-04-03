@@ -24,6 +24,10 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 
 @implementation RPRoomListTableViewController
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
@@ -47,6 +51,9 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     [self.tableView addSubview:self.refreshControl];
     
     [self loadRoomData];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadBeacons:)
+                                                 name:kRPDidUpdateRoomNotification object:nil];
 }
 
 
@@ -124,4 +131,15 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
         self.selectionIndex = -1;
     }
 }
+
+#pragma mark -
+#pragma mark - BeaconManager Notifications
+
+- (void)reloadBeacons:(NSNotification *)notification {
+    if (!self.refreshControl.isRefreshing) {
+        [self.refreshControl beginRefreshing];
+        [self loadRoomData];
+    }
+}
+
 @end
