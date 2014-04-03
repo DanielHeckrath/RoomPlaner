@@ -69,18 +69,20 @@
 #pragma mark - CLLocaionManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-    
+    NSLog(@"Did enter readion: %@", region);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    //NSLog(@"didExit ")
+    NSLog(@"Did exit readion: %@", region);
 }
 
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     for(CLBeacon *beacon in beacons) {
-        if(beacon.proximity == CLProximityNear) {
-            if([_beaconsInRange indexOfObject:beacon] == NSNotFound) {
+        if(beacon.proximity == CLProximityNear || beacon.proximity == CLProximityImmediate) {
+            if([_beaconsInRange indexOfObjectPassingTest:^BOOL(CLBeacon *obj, NSUInteger idx, BOOL *stop) {
+                return ([obj.minor isEqual:beacon.minor] && [obj.major isEqual:beacon.major]);
+            }] == NSNotFound) {
                 // check if beacon is for our rooms
                 for(Room *room in _rooms) {
                     if([room.major isEqual:beacon.major] && [room.minor isEqual:beacon.minor]) {
@@ -95,11 +97,14 @@
             }
         } else {
             // check if becon is important for us
-            if([_beaconsInRange indexOfObject:beacon] != NSNotFound) {
+            NSUInteger index = [_beaconsInRange indexOfObjectPassingTest:^BOOL(CLBeacon *obj, NSUInteger idx, BOOL *stop) {
+                return ([obj.minor isEqual:beacon.minor] && [obj.major isEqual:beacon.major]);
+            }];
+            if(index != NSNotFound) {
                 // set room to "free"
                 for(Room *room in _rooms) {
                     if([room.major isEqual:beacon.major] && [room.minor isEqual:beacon.minor]) {
-                        [_beaconsInRange removeObject:beacon];
+                        [_beaconsInRange removeObjectAtIndex:index];
                         NSLog(@"set room: %@ to free",room.name);
                         room.occupied = NO;
                         [room saveInBackground];

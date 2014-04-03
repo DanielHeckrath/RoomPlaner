@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    self.title = @"Add Room";
+    
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
 

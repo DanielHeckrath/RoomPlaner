@@ -32,9 +32,12 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"Room Overview";
+    
     self.sharedBeaconManager = [BeaconManager sharedInstance];
     
-    self.tableView.allowsSelection = NO;
+    self.tableView.allowsSelection = YES;
     [self.tableView registerClass:[RPRoomAvailabilityTableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
 
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -98,9 +101,15 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     return roomTableViewCell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"RPRoomDetailViewControllerSegue" sender:self];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"Segue identifier: %@", segue.identifier);
+}
 @end
