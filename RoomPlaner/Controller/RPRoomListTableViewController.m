@@ -17,6 +17,7 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 @property (strong, nonatomic) BeaconManager *sharedBeaconManager;
 @property (nonatomic, strong) NSArray *rooms;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation RPRoomListTableViewController
@@ -35,7 +36,16 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     self.tableView.allowsSelection = NO;
     [self.tableView registerClass:[RPRoomAvailabilityTableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
 
-    self.rooms = [self mockedRooms];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshControlPulled:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    
+    [self loadRoomData];
+}
+
+
+- (void)refreshControlPulled:(UIRefreshControl *)sender {
+    [self loadRoomData];
 }
 
 - (NSArray *)mockedRooms {
@@ -54,9 +64,12 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 #pragma mark -
 #pragma mark - Data loading
 
-- (void)loadRoomData {
-    // load...
-    self.rooms = [self.sharedBeaconManager rooms];
+- (void)loadRoomData {  
+    //self.rooms = [self.sharedBeaconManager rooms];
+    self.rooms = [self mockedRooms];
+    
+    [self.refreshControl endRefreshing];
+    [self.tableView reloadData];
 }
 
 #pragma mark -
@@ -77,6 +90,11 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     RPRoomAvailabilityTableViewCell *roomTableViewCell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
     roomTableViewCell.room = self.rooms[(NSUInteger) indexPath.row];
     return roomTableViewCell;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
