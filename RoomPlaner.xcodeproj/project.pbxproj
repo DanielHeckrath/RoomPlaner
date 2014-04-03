@@ -30,6 +30,7 @@
 		6556212318EDCF3C00479B20 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212218EDCF3C00479B20 /* Security.framework */; };
 		6556212518EDCF4100479B20 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212418EDCF4100479B20 /* StoreKit.framework */; };
 		6556212718EDCF4900479B20 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212618EDCF4900479B20 /* SystemConfiguration.framework */; };
+		FD3DDAEB18EDD101004447E9 /* BeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3DDAEA18EDD101004447E9 /* BeaconManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		6556212218EDCF3C00479B20 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6556212418EDCF4100479B20 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6556212618EDCF4900479B20 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FD3DDAE918EDD101004447E9 /* BeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconManager.h; path = RoomPlaner/Models/BeaconManager.h; sourceTree = SOURCE_ROOT; };
+		FD3DDAEA18EDD101004447E9 /* BeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconManager.m; path = RoomPlaner/Models/BeaconManager.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 		6556211518EDCEA900479B20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FD3DDAE918EDD101004447E9 /* BeaconManager.h */,
+				FD3DDAEA18EDD101004447E9 /* BeaconManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3DDAEB18EDD101004447E9 /* BeaconManager.m in Sources */,
 				655620F518EDCB1A00479B20 /* AppDelegate.m in Sources */,
 				655620F118EDCB1A00479B20 /* main.m in Sources */,
 			);
