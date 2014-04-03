@@ -82,14 +82,26 @@
                     if(room.major == beacon.major && room.minor == beacon.minor) {
                         // good beacon for us
                         [_beaconsInRange addObject:beacon];
+                        NSLog(@"set room: %@ to occupied",room.name);
+                        room.occupied = YES;
+                        
+                        [room saveInBackground];
                     }
                 }
             }
         } else {
-            // check if we
+            // check if becon is important for us
             if([_beaconsInRange indexOfObject:beacon] != NSNotFound) {
-                // exit
+                // remove beacon
                 [_beaconsInRange removeObject:beacon];
+                // set room to "free"
+                for(Room *room in _rooms) {
+                    if(room.minor == beacon.minor && room.major == beacon.major) {
+                        NSLog(@"set room: %@ to free",room.name);
+                        room.occupied = NO;
+                        [room saveInBackground];
+                    }
+                }
             }
         }
     }
