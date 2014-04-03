@@ -34,6 +34,7 @@
 		6556212A18EDD05100479B20 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556212918EDD05100479B20 /* Room.m */; };
 		65DC0FE818EDD4D2007A0972 /* RPAddRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC0FE718EDD4D2007A0972 /* RPAddRoomTableViewController.m */; };
 		7E57D2075481955F102F9B16 /* RPRoomAvailabilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E57DBB1568F3C9C0EB85D2B /* RPRoomAvailabilityTableViewCell.m */; };
+		7E57D677C342EE89743BF1BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212018EDCF3200479B20 /* QuartzCore.framework */; };
 		FDA90CA918EDDC6B0058821C /* BeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA90CA818EDDC6B0058821C /* BeaconManager.m */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 				655620E918EDCB1A00479B20 /* UIKit.framework in Frameworks */,
 				6556211418EDCCA400479B20 /* Parse.framework in Frameworks */,
 				655620E518EDCB1A00479B20 /* Foundation.framework in Frameworks */,
+				7E57D677C342EE89743BF1BC /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
