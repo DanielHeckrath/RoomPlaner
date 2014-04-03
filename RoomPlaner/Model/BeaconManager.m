@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Hackathon. All rights reserved.
 //
 
+#define kUIDD               @"f7826da6-4fa2-4e98-8024-bc5b71e0893e"
 #define kRegionIdentifier   @"f7826da6-4fa2-4e98-8024-bc5b71e0893e"
 
 #import "BeaconManager.h"
@@ -44,7 +45,7 @@ NSString * const kRPDidUpdateRoomNotification = @"RoomPlaner:DidUpdateRooms";
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         
-        NSUUID *uuid = [[NSUUID alloc]initWithUUIDString:@"f7826da6-4fa2-4e98-8024-bc5b71e0893e"];
+        NSUUID *uuid = [[NSUUID alloc]initWithUUIDString:kUIDD];
         _beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:kRegionIdentifier];
         [_locationManager startMonitoringForRegion:_beaconRegion];
         
