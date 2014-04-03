@@ -11,7 +11,7 @@
 
 @implementation Room
 
-@dynamic name, major, minor;
+@dynamic name, major, minor, isOccupied;
 
 + (NSString *)parseClassName {
     return @"Room";
