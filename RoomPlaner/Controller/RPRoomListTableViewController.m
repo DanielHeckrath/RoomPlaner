@@ -9,6 +9,7 @@
 #import "RPRoomListTableViewController.h"
 #import "BeaconManager.h"
 #import "RPRoomAvailabilityTableViewCell.h"
+#import "RPRoomDetailViewController.h"
 #import "Room.h"
 
 static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
@@ -52,6 +53,8 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     [self loadRoomData];
 }
 
+/*
+// debug:
 - (NSArray *)mockedRooms {
     Room *firstRoom = [[Room alloc] init];
     firstRoom.name = @"Startplatz 01";
@@ -64,6 +67,7 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
     thirdRoom.occupied = YES;
     return @[firstRoom, secondRoom, thirdRoom];
 }
+*/
 
 #pragma mark -
 #pragma mark - Data loading
@@ -110,6 +114,9 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"Segue identifier: %@", segue.identifier);
+    if ([segue.identifier isEqualToString:@"RPRoomDetailViewControllerSegue"]) {
+        RPRoomDetailViewController *controller = (RPRoomDetailViewController *)segue.destinationViewController;
+        controller.room = self.rooms[[self.tableView indexPathForSelectedRow].row];
+    }
 }
 @end

@@ -10,6 +10,10 @@
 #import "Room.h"
 
 @interface RPRoomDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *labelRoomName;
+@property (weak, nonatomic) IBOutlet UILabel *labelMajor;
+@property (weak, nonatomic) IBOutlet UILabel *labelMinor;
+@property (weak, nonatomic) IBOutlet UILabel *labelOccupation;
 
 @end
 
@@ -21,6 +25,20 @@
     [super viewDidLoad];
     
     self.title = @"Room Detail";
+    
+    [self populateRoomLabels];
+}
+
+- (void)populateRoomLabels
+{
+    if (!self.room) {
+        return;
+    }
+    
+    self.labelRoomName.text = self.room.name;
+    self.labelMajor.text = [self.room.major stringValue];
+    self.labelMinor.text = [self.room.minor stringValue];
+    self.labelOccupation.text = [NSString stringWithFormat:@"Occupied: %@", self.room.occupied ?  @"YES" : @"NO"];
 }
 
 @end
