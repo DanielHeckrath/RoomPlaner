@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSNumber *major;
 @property (nonatomic, strong) NSNumber *minor;
+@property (nonatomic, assign, getter = isOccupied) BOOL occupied;
 
 @end
