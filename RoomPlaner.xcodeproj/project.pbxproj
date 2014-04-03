@@ -32,6 +32,7 @@
 		6556212518EDCF4100479B20 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212418EDCF4100479B20 /* StoreKit.framework */; };
 		6556212718EDCF4900479B20 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556212618EDCF4900479B20 /* SystemConfiguration.framework */; };
 		6556212A18EDD05100479B20 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556212918EDD05100479B20 /* Room.m */; };
+		65DC0FE818EDD4D2007A0972 /* RPAddRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC0FE718EDD4D2007A0972 /* RPAddRoomTableViewController.m */; };
 		7E57D2075481955F102F9B16 /* RPRoomAvailabilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E57DBB1568F3C9C0EB85D2B /* RPRoomAvailabilityTableViewCell.m */; };
 		FD3DDAEB18EDD101004447E9 /* BeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3DDAEA18EDD101004447E9 /* BeaconManager.m */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,8 @@
 		6556212618EDCF4900479B20 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6556212818EDD05100479B20 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
 		6556212918EDD05100479B20 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		65DC0FE618EDD4D2007A0972 /* RPAddRoomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RPAddRoomTableViewController.h; path = Controller/RPAddRoomTableViewController.h; sourceTree = "<group>"; };
+		65DC0FE718EDD4D2007A0972 /* RPAddRoomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPAddRoomTableViewController.m; path = Controller/RPAddRoomTableViewController.m; sourceTree = "<group>"; };
 		7E57D06DA87E625B8F543F90 /* RPRoomAvailabilityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPRoomAvailabilityTableViewCell.h; sourceTree = "<group>"; };
 		7E57DBB1568F3C9C0EB85D2B /* RPRoomAvailabilityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPRoomAvailabilityTableViewCell.m; sourceTree = "<group>"; };
 		FD3DDAE918EDD101004447E9 /* BeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconManager.h; path = RoomPlaner/Models/BeaconManager.h; sourceTree = SOURCE_ROOT; };
@@ -123,6 +126,8 @@
 			children = (
 				4F7D94BA18EDD09C00EB850E /* RPRoomListTableViewController.h */,
 				4F7D94BB18EDD09C00EB850E /* RPRoomListTableViewController.m */,
+				65DC0FE618EDD4D2007A0972 /* RPAddRoomTableViewController.h */,
+				65DC0FE718EDD4D2007A0972 /* RPAddRoomTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				6556212A18EDD05100479B20 /* Room.m in Sources */,
 				655620F518EDCB1A00479B20 /* AppDelegate.m in Sources */,
 				655620F118EDCB1A00479B20 /* main.m in Sources */,
+				65DC0FE818EDD4D2007A0972 /* RPAddRoomTableViewController.m in Sources */,
 				4F7D94BC18EDD09C00EB850E /* RPRoomListTableViewController.m in Sources */,
 				7E57D2075481955F102F9B16 /* RPRoomAvailabilityTableViewCell.m in Sources */,
 			);

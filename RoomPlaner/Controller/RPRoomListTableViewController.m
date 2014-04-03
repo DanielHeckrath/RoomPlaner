@@ -7,17 +7,27 @@
 //
 
 #import "RPRoomListTableViewController.h"
-#import "Room.h"
+#import "BeaconManager.h"
 #import "RPRoomAvailabilityTableViewCell.h"
+#import "Room.h"
 
 static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 
 @interface RPRoomListTableViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property (strong, nonatomic) BeaconManager *sharedBeaconManager;
 @property (nonatomic, strong) NSArray *rooms;
 @end
 
 @implementation RPRoomListTableViewController
+
+- (id)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (self) {
+        self.sharedBeaconManager = [BeaconManager sharedInstance];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,10 +52,11 @@ static NSString * const CELL_IDENTIFIER = @"RPRoomTableViewCell";
 }
 
 #pragma mark -
-#pragma mark - Table view data source
+#pragma mark - Data loading
 
-- (IBAction)addAction:(UIBarButtonItem *)sender {
-    // TODO: show add view
+- (void)loadRoomData {
+    // load...
+    self.rooms = [self.sharedBeaconManager rooms];
 }
 
 #pragma mark -
